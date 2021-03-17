@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IO Technologies</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main" class="wrapper">
+      <main class="main">
+        <div class="main__inner">
+          <img class="main__img" src="./img/logo.png" width="200" alt="logo" />
+          <div class="main__container">
+            <span class="message"
+              >Get how to help and instructions or specific features in <br />
+              <a class="link-button" href="#">help center</a> <span>or</span>
+              <a href="#" class="link-button">support</a>
+            </span>
+          </div>
+        </div>
+      </main>
+      <a class="scroll-down" href="#login"
+        ><img class="arrow-down" src="img/right-arrow.png" alt="arrow-down"
+      /></a>
+      <aside class="aside">
+        <div class="slider">
+          <div class="slider__content">
+            <form
+              id="login"
+              class="form slider__element"
+              autocomplete="off"
+              onsubmit="redirect()"
+              novalidate
+            >
+              <p class="form__greeting">Welcome back</p>
+              <p class="form__message">
+                Sign in to continue to IO Technologies.
+              </p>
+              <div class="form__field-box">
+                <div class="input__container">
+                  <input
+                    id="email"
+                    class="form__text-input"
+                    name="email"
+                    type="email"
+                    placeholder="Your email"
+                    oninput="checkInput()"
+                  />
+                  <div class="error__message hidden" id="invalid_error_mail">
+                    Oops! You've entered an invalid email.
+                  </div>
+                </div>
+                <div class="input__container">
+                  <input
+                    id="password"
+                    class="form__text-input"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    oninput="checkInput()"
+                  />
+                  <div class="error__message hidden" id="invalid_error_pass">
+                    Password cannot be less than 8 characters.
+                  </div>
+                </div>
+
+                <button id="log-in" class="form__button" disabled>
+                  <span
+                    >log in
+                    <img
+                      class="form__button--image"
+                      src="./img/right-arrow.png"
+                      alt="arrow"
+                  /></span>
+                </button>
+              </div>
+              <span class="form__message"
+                >Forgot your password?
+                <a class="link" onclick="shift()">Reset</a></span
+              >
+            </form>
+            <form
+              id="recover"
+              class="form slider__element"
+              autocomplete="off"
+              novalidate
+              onsubmit="redirect()"
+            >
+              <button
+                type="button"
+                tabindex="-1"
+                class="btn--return"
+                onclick="shift()"
+              >
+                <img
+                  class="arrow-left"
+                  src="./img/right-arrow.png"
+                  alt="return"
+                />
+              </button>
+              <p class="form__greeting">Forgot password?</p>
+              <div class="form__field-box">
+                <div class="input__container">
+                  <input
+                    id="email_reset"
+                    tabindex="-1"
+                    class="form__text-input"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    oninput="checkResetEmailInput()"
+                  />
+                  <div class="error__message hidden" id="email_reset_error">
+                    Oops! You've entered an invalid email
+                  </div>
+                </div>
+                <button id="sent-instruction" class="form__button" disabled>
+                  <span>send me instructions</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
